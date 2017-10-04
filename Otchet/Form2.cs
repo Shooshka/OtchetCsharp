@@ -29,6 +29,10 @@ namespace Otchet
                     try
                     {
                         File.Copy(Form1.otchetPath, OtchetFile, overwrite: true);
+                        using (StreamWriter sw = File.AppendText(OtchetFile))
+                        {
+                            sw.WriteLine("Всего обновлено " + Form1.GetAllBases() + " баз");
+                        }
                     }
                     
                     catch (FileNotFoundException ex)
@@ -64,6 +68,11 @@ namespace Otchet
             try
             {
                 File.Copy(Form1.otchetPath, OtchetFile, overwrite: true);
+                using (StreamWriter sw = File.AppendText(OtchetFile))
+                {
+                    sw.WriteLine("Всего обновлено " + Form1.GetAllBases() + " баз");
+                }
+                    
             }
             catch (FileNotFoundException ex2)
             {
