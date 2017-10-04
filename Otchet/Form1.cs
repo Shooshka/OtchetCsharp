@@ -51,6 +51,7 @@ namespace Otchet
             StreamWriter filew = new StreamWriter(otchetPath, append: true);
             filew.WriteLine(today + "," + textBox1.Text + "," + numericUpDown1.Value +"," + textBox3.Text);
             filew.Close();
+            MessageBox.Show("Успешно записано");
         }
 
         private void button2_Click(object sender, EventArgs e)
